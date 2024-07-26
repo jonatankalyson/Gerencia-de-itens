@@ -2,11 +2,11 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   display: flex;
-  flex-direction: column; /* Adiciona esta linha */
-  justify-content: space-between; /* Adiciona esta linha para separar o conteúdo e o botão */
+  flex-direction: column; 
+  justify-content: space-between;
   align-items: center;
-  height: 100vh; /* Faz com que o container ocupe toda a altura da tela */
-  background-color: #e9ecef; /* Cor de fundo leve para destacar o formulário */
+  height: 100vh;
+  background-color: #e9ecef; 
 
   header {
     text-align: center;
