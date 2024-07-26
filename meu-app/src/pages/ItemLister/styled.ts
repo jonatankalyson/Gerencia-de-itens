@@ -1,90 +1,82 @@
 import styled from "styled-components";
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 export const Container = styled.div`
-
-header{
   display: flex;
-  justify-content: space-between;
-  margin-bottom: 3rem;
+  flex-direction: column; /* Adiciona esta linha */
+  justify-content: space-between; /* Adiciona esta linha para separar o conteúdo e o botão */
   align-items: center;
-  padding: 3rem 2rem 0;
+  height: 100vh; /* Faz com que o container ocupe toda a altura da tela */
+  background-color: #e9ecef; /* Cor de fundo leve para destacar o formulário */
 
-  .bola{
-    background-color:#86B681 ;
-    padding: 1.5rem;
-    border-radius: 60%;
-
-    span{
-      font-weight: 500;
-    }
-  }
-}
-
-main{
-  background-color: #E9E7EA;
-  height: 100vh;
-  border-radius: 2.5rem 2.5rem 0 0;
-  padding: 4rem 2rem;
-  
-
-  p{
-    font-size: 1.8rem;
+  header {
+    text-align: center;
   }
 
-}
-.card{
-  display: flex;
-  align-items: center;
-  
-  justify-content: space-between;
-  padding: 1rem;
-  background-color: #cfc7d3;
-  border-radius: 1rem;
-  margin-bottom: 1rem;
-}
-.imgtitle{
-  display: flex;
-  gap: 1.5rem;
-  align-items: center;
+  main {
+    flex: 1; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; 
+  }
 
-}
-.btns{
-  display: flex;
-  flex-direction: column;
-  gap: 1rem;
- 
-  
-  button{
+  .cadastrar {
+    margin-bottom: 1rem; 
+    width: 100%;
+    max-width: 600px; 
+    display: flex;
+    justify-content: center;
+  }
+
+  button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #343a40; 
+    color: white;
     border: none;
+    border-radius: 6px;
     cursor: pointer;
-    background-color: transparent;
-    
-    svg{
-      height: 2rem;
-      width: 2rem;
-      background-color:transparent;
-    }
-
+    font-size: 1rem;
+    transition: background-color 0.3s ease;
   }
+
+  button:hover {
+    background-color: #23272b; 
+  }
+
   
-}
-.cadastrar{
-  
-  border: 1px solid red;
-  width: 100%;
-    button{
-     background-color: #1C1E21;
-     color: white;
-     font-size: 2rem;
-     border-radius: 2rem;
-     padding: 1rem 2rem;
-     display: flex;
-     justify-content: center;
-     align-items: center;
-    
-    }
+  .card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+    max-width: 800px; 
+    padding: 1rem;
+    border: 1px solid #ced4da;
+    border-radius: 6px;
+    background-color: #ffffff;
+    margin-bottom: 1rem; 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .imgtitle {
+    display: flex;
+    align-items: center;
+  }
+
+  .imgtitle img {
+    width: 50px; 
+    height: 50px; 
+    margin-right: 1rem;
+  }
+
+  .imgtitle p {
+    margin: 0;
+  }
+
+  .btns {
+    display: flex;
+    gap: 1rem; 
   }
 `;
-
-

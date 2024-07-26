@@ -6,6 +6,7 @@ import { useForm } from 'react-hook-form';
 import api from '../../service/service';
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
 import {Container} from './styled'
+import { useNavigate } from 'react-router-dom';
 
 function Cadastro() {
   const {
@@ -16,12 +17,15 @@ function Cadastro() {
   } = useForm<AdicionarCadastroRequestData>({
     resolver: zodResolver(adicionarCadastroSchema),
   });
+  const navigate = useNavigate();
 
   const onSubmit = async (data: AdicionarCadastroRequestData) => {
     try {
       const response = await api.post('/cadastrar', data);
       console.log('Item cadastrado com sucesso:', response.data);
       reset(); 
+      navigate('/'); 
+
     } catch (error) {
       console.error('Erro ao cadastrar item:', error);
     }

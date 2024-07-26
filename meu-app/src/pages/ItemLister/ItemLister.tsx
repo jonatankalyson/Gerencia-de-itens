@@ -47,6 +47,9 @@ function ItemListe() {
       console.error('Erro ao deletar item:', error);
     }
   }
+  const handleEdit = (id: number) => {
+    navigate(`/editar/${id}`);
+  };
 
   useEffect(() => {
     getLista();
@@ -69,7 +72,7 @@ function ItemListe() {
               <div><p>{item.nome}</p></div>
             </div>
             <div className="btns">
-              <button ><FaRegEdit /></button>
+              <button className="edit"  onClick={() => handleEdit(item.id)}><FaRegEdit /></button>
               <button onClick={() => deletar(item.id)}><MdDelete /></button>
             </div>
           </div>
@@ -78,16 +81,6 @@ function ItemListe() {
             <button onClick={() => navigate('/cadastro')}>Cadastrar</button>
           </div>
         </main>
-        {/* <div className="divbut">
-          <button>Cadastrar</button>
-        </div>
-        {items.map((item) => (
-          <div className="card" key={item.id}>
-            <p className="titulo">{item.nome}</p>
-            <img className="imgcard" src={img} alt="" />
-            <p className="descricao">{item.descricao}</p>
-          </div>
-        ))}  */}
     </Container>
   );
 }
